@@ -1,5 +1,4 @@
 import "./note-list.js";
-import { notesData } from "../data/notesData.js"; // Pastikan import ini benar
 
 class NoteInput extends HTMLElement {
     constructor() {
@@ -92,21 +91,15 @@ class NoteInput extends HTMLElement {
                     archived: false,
                 };
 
-                // Cari komponen note-list
                 const noteList = document.querySelector("note-list");
 
-                // Pastikan noteList sudah ada sebelum digunakan
                 if (noteList) {
-                    // Ambil daftar catatan lama, pastikan memasukkan notesData juga
-                    const existingNotes = noteList.notes ? [...notesData, ...noteList.notes] : [...notesData];
-
-                    // Tambahkan catatan baru ke daftar
-                    noteList.setNotes([...existingNotes, newNote]);
+                    const existingNotes = [...noteList.notes, newNote];
+                    noteList.data = existingNotes;
                 } else {
                     console.error("Elemen <note-list> tidak ditemukan di dalam dokumen.");
                 }
 
-                // Reset form setelah ditambahkan
                 this.shadowRoot.querySelector("#note-form").reset();
             }
         });

@@ -8,7 +8,7 @@ class AppBar extends HTMLElement {
         return ['title'];
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name) {
         if (name === 'title') {
             this.render();
         }

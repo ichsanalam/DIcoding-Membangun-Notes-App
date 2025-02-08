@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     noteList.data = notesData;
 
     const noteSearch = document.querySelector('note-search');
-    noteSearch.addEventListener("search-note", (e) => {
-        noteList.searchNotes(e, notesData);
+    noteSearch.addEventListener("search-note", (event) => {
+        noteList.searchNotes(event, notesData);
     });
 });

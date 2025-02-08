@@ -8,24 +8,35 @@ class NoteItem extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
                     padding: 15px;
                     border-radius: 8px;
                     background: white;
                     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
                 }
-                h3 {
+
+                h2 {
                     margin: 0;
-                    font-size: 1.2em;
+                    font-size: 20px;
                 }
-                p {
-                    font-size: 0.9em;
-                    color: #555;
+
+                .body {
+                    font-size: 16px;
+                    color: #27445D;
                 }
+
+                .time {
+                    font-size: 14px;
+                    color: #E52020;
+                    align-self: flex-end;
+                    margin-top: auto;
+                }
+
             </style>
-            <h3>${note.title}</h3>
-            <p>${note.body}</p>
-            <p><small>${new Date(note.createdAt).toLocaleDateString()}</small></p>
+            <h2>${note.title}</h3>
+            <p class='body'>${note.body}</p>
+            <p class='time'>${new Date(note.createdAt).toLocaleDateString()}</p>
         `;
     }
 }

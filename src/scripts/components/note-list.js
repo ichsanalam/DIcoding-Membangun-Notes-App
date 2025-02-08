@@ -14,6 +14,10 @@ class NoteList extends HTMLElement {
         this.render()
     }
 
+    get notes() {
+        return this.notesData;
+    }
+
     connectedCallback() {
         this.render();
     }
