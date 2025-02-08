@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #71BBB2;
+        }
+
+        main {
+            width: 100%;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+
+        @media (max-width: 639px) {
+            main {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <app-bar title="Catatanku"></app-bar>
+        </div>
+    </header>
+    <main>
+        <note-input></note-input>
+        <note-search></note-search>
+        <note-list></note-list>
+    </main>
+
+    <footer>
+        <footer-bar></footer-bar>
+    </footer>
+
+    <script type="module" src="/src/app.js"></script>
+</body>
+
+</html>
